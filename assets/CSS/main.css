@@ -1,5 +1,8 @@
 :root {
   --clr-blue: rgb(82, 177, 236);
+  --clr-pink-mid:#CFA6A61C;
+  --clr-pink:#F4E2E2;
+  --clr-pink-dark:#F98585;
   --clr-blue-mid:rgb(82, 132, 238);
   --clr-blue-light:rgb(190, 228, 243);
   --clr-blue-dark:rgb(5, 5, 119);
@@ -21,12 +24,25 @@
 html{
   font-size: 10px;
 }
-body{
+body {
   font-size: 1.6rem;
-  font-family:  var(--font-poppins);
-  background-color: rgb(238, 247, 253);
+  font-family: var(--font-poppins);
+
+  background-color: var(--clr-pink-mid);; /* Background image */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
 }
  
+/* Custom CSS for background image */
+.homepage {
+  background-color: var(--clr-pink);
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Makes the background cover the full viewport height */
+  width: 100%; /* Makes the background cover the full width */
+}
 
 button{
   border:none;
@@ -59,8 +75,8 @@ a{
 
 /*background*/
  /* Background colors */
-.bg-blue { background-color: var(--clr-blue); }
-.bg-blue-mid { background-color: var(--clr-blue-mid); }
+.bg-blue { background-color: var(--clr-pink); }
+.bg-blue-mid { background-color: var(--clr-pink-mid); }
 .bg-blue-dark { background-color: var(--clr-blue-dark); }
 .bg-bright { background-color: var(--clr-bright); }
 .bg-dark { background-color: var(--clr-dark); }
@@ -68,6 +84,10 @@ a{
 .bg-white { background-color: var(--clr-white); }
 .bg-blue-light {background-color: var(--clr-blue-light); }
 .bg-green {background-color: var(--clr-green); }
+
+.bg-pink {background-color: var(--clr-pink); }
+.bg-pink-mid {background-color: var(--clr-pink-mid); }
+.bg-pink-dark{background-color: var(--clr-pink-dark)}
 
 
 .text-center{
@@ -88,7 +108,7 @@ text-transform: uppercase;
     text-transform: capitalize;
     }
 .text{
-  color:var(--clr-dark);
+  color:var(--clr-white);
   opacity: 0.9;
   margin: 2rem 0;
   line-height: 1.6;
@@ -125,6 +145,7 @@ text-transform: uppercase;
   margin: 0 auto;
   padding: 0 1.6rem;
 }
+ 
 .bars{
 display: flex;
 flex-direction:column;
@@ -135,7 +156,7 @@ width: 25px;
 .bars .bar{
   width: 100%;
   height: 2px;
-  background-color: var(--clr-blue);
+  background-color: var(--clr-blue-dark);
   transition: var(--transition);
 }
 .bars:hover .bar{
@@ -149,9 +170,9 @@ width: 25px;
   display: inline-block;
 }
 .btn-primary{
-  background-color: var(--clr-blue);
+  background-color: var(--clr-pink-dark);
   color:var(--clr-white);
-  border: 1px solid var(--clr-blue);
+  border: 1px solid var(--clr-gray);
   transition: var(--transition);
 }
 .btn-primary:hover{
@@ -161,7 +182,7 @@ width: 25px;
 }
 .btn-secondary{
   background-color:transparent;
-  color:var(--clr-dark);
+  color:var(--clr-white);
   border: 1px solid var(--clr-gray);
   transition: var(--transition);
 }
@@ -229,7 +250,8 @@ width: 25px;
   margin:1.4rem 0;
   font-size: 37px;
   line-height: 1.4;
-  color: var(--clr-dark);
+  color: var(--clr-blue-dark);
+  
 
 }
 .header-content p{
@@ -263,12 +285,17 @@ margin-left: auto;
 margin-top: 3rem;
 }
 .section-two{
-  padding: 64px 0;
+  padding: 64px 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+   
 
 }
 .section-two .section-items{
   display: grid;
   gap:2rem;
+  padding: auto;
+  margin-bottom: 10px;
 }
 .section-two .section-item{
   max-width: 350px;
@@ -281,8 +308,10 @@ margin-top: 3rem;
 }
 .section-two .section-item-icon img{
   width: 80px;
+  height:70px;
   margin-left: auto;
   margin-right: auto;
+  
 }
 .section-two .section-item-title{
   color:var(--clr-blue-dark);
@@ -329,9 +358,16 @@ color: var(--clr-white);
 } 
 
 /*resume page*/
-#about-sc{
+#about-sc {
   padding: 64px 0;
+  background: #F4E2E2;;
+  
+  
 }
+.bg{
+  background:#CFA6A61C;;
+}
+ 
 
 .cv-form-row-title{
   background-color: var(--clr-dark);
@@ -417,12 +453,15 @@ textarea{
 }
 
 /* preview section */
+ 
+ 
 .preview-cnt{
   border-radius: 5px;
   display: grid;
   grid-template-columns: 32% auto;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   overflow: hidden;
+  background: lightblue;
 }
 
 .preview-cnt-l{
